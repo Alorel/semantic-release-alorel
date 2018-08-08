@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+- stable
+- lts/carbon
+- lts/boron
+sudo: false
+
+env:
+  global:
+  - TS_NODE_CACHE_DIRECTORY=./node_modules/.cache/ts-node
+
+before_install:
+- npm i -g greenkeeper-lockfile
+- greenkeeper-lockfile-update
+
+install: npm install
+script:
+  - npm run tslint
+  - npm test -- --forbid-only --forbid-pending
+after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+after_success: cat ./coverage/lcov.info | coveralls
+
+before_cache: rm -rf ./node_modules/.cache
+cache:
+  directories:
+  - node_modules
+
+stages:
+- Test
+#- Release
+
+#jobs:
+#  include:
+#  - on: branch=master
+#    stage: Release
+#    node_js: stable
+#    before_install: []
+#    before_script: npm run build
+#    script:
+#    after_script: []
+#    after_success: []

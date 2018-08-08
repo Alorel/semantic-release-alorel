@@ -1,0 +1,52 @@
+{
+  "name": "@alorel-personal/semantic-release",
+  "version": "0.0.0",
+  "description": "Personal additions to the semantic-release library",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "build:watch": "npm run build -- --watch",
+    "pretest": "rimraf coverage",
+    "test": "nyc mocha --opts ./mocha.opts",
+    "test:watch": "npm run test -- --watch",
+    "tslint": "tslint -s ./node_modules/custom-tslint-formatters/formatters -t grouped -p tsconfig.test.json",
+    "tslint:fix": "npm run tslint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alorel/semantic-release-alorel.git"
+  },
+  "author": "Alorel <a.molcanovas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alorel/semantic-release-alorel/issues"
+  },
+  "homepage": "https://github.com/Alorel/semantic-release-alorel#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@alorel-personal/tslint-rules": "1.1.0",
+    "@types/chai": "^4.1.4",
+    "@types/fs-extra": "^5.0.4",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.5.7",
+    "@types/uuid": "^3.4.3",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
+    "custom-tslint-formatters": "^2.4.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "rimraf": "^2.6.2",
+    "source-map-support": "^0.5.6",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1",
+    "uuid": "^3.3.2"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "tslib": "^1.6.0"
+  }
+}
