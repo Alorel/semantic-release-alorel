@@ -11,13 +11,14 @@ env:
 
 before_install:
 - npm i -g greenkeeper-lockfile
+- &prep if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
 
 install: npm install
 script:
   - npm run tslint
   - npm test -- --forbid-only --forbid-pending
-after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+after_script: if [[ $GH_TOKEN ]]; greenkeeper-lockfile-upload; fi;
 after_success: cat ./coverage/lcov.info | coveralls
 
 before_cache: rm -rf ./node_modules/.cache
@@ -27,15 +28,15 @@ cache:
 
 stages:
 - Test
-#- Release
+- Release
 
-#jobs:
-#  include:
-#  - on: branch=master
-#    stage: Release
-#    node_js: stable
-#    before_install: []
-#    before_script: npm run build
-#    script:
-#    after_script: []
-#    after_success: []
+jobs:
+  include:
+  - on: branch=master
+    stage: Release
+    node_js: stable
+    before_install: *prep
+    before_script: npm run build
+    script: semantic-release
+    after_script: []
+    after_success: []
