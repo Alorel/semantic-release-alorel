@@ -10,3 +10,4 @@
 /*.tgz
 /.nycrc
 /git_gpg_keys.asc
+/git_gpg_keys.asc.enc
