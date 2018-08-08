@@ -18,7 +18,7 @@ install: npm install
 script:
   - npm run tslint
   - npm test -- --forbid-only --forbid-pending
-after_script: if [[ $GH_TOKEN ]]; greenkeeper-lockfile-upload; fi;
+after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
 after_success: cat ./coverage/lcov.info | coveralls
 
 before_cache: rm -rf ./node_modules/.cache
