@@ -1,3 +1,15 @@
+## [1.2.1](https://github.com/Alorel/semantic-release-alorel/compare/1.2.0...1.2.1) (2018-08-09)
+
+
+### Bug Fixes
+
+* **setReadmeVersion:** No longer replace branch name with "my-branch" ([6de0ace](https://github.com/Alorel/semantic-release-alorel/commit/6de0ace))
+
+
+### Build System
+
+* Don't run release stage on PRs ([780c220](https://github.com/Alorel/semantic-release-alorel/commit/780c220))
+
 # [1.2.0](https://github.com/Alorel/semantic-release-alorel/compare/1.1.0...1.2.0) (2018-08-09)
 
 

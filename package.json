@@ -1,6 +1,6 @@
 {
   "name": "@alorel-personal/semantic-release",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Personal additions to the semantic-release library",
   "main": "dist/index.js",
   "scripts": {
