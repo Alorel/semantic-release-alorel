@@ -17,7 +17,14 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
   }
 
   const replacements: any[][] = [
-    [/\?branch=([a-z0-9.\-_]+)/ig, `?branch=${ctx.nextRelease.version}`]
+    [
+      /\?branch=([a-z0-9.\-_]+)/ig,
+      `?branch=${ctx.nextRelease.version}`
+    ],
+    [
+      /img\.shields\.io\/travis(\/com)?\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\.([a-z]{2,4})/ig,
+      'img.shields.io/travis$1/$2/$3/my-branch.$5'
+    ]
   ];
 
   log('Applying versions to README');
