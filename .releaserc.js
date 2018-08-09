@@ -12,7 +12,8 @@ module.exports = {
         'package.json',
         'package-lock.json',
         'README.md'
-      ]
+      ],
+      message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}'
     }
   ],
   generateNotes: {
