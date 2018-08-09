@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Alorel/semantic-release-alorel/compare/1.1.0...1.2.0) (2018-08-09)
+
+
+### Features
+
+* Support coveralls shields.io badge ([b9e2e44](https://github.com/Alorel/semantic-release-alorel/commit/b9e2e44))
+
 # [1.1.0](https://github.com/Alorel/semantic-release-alorel/compare/1.0.2...1.1.0) (2018-08-09)
 
 
