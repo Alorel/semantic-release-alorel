@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/Alorel/semantic-release-alorel/compare/1.0.2...1.1.0) (2018-08-09)
+
+
+### Build System
+
+* Remove redundant TS_NODE env variable ([625a9ee](https://github.com/Alorel/semantic-release-alorel/commit/625a9ee))
+* restore caching ([64dc303](https://github.com/Alorel/semantic-release-alorel/commit/64dc303))
+* tweaked caching settings ([bf13282](https://github.com/Alorel/semantic-release-alorel/commit/bf13282))
+
+
+### Features
+
+* Support travis-ci shields.io badge ([c1531ff](https://github.com/Alorel/semantic-release-alorel/commit/c1531ff))
+
+
+### Maintenance
+
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/tslint-rules to version 1.2.0 ([073f5dc](https://github.com/Alorel/semantic-release-alorel/commit/073f5dc))
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/tslint-rules to version 1.2.1 ([5e7f707](https://github.com/Alorel/semantic-release-alorel/commit/5e7f707))
+
 ## [1.0.2](https://github.com/Alorel/semantic-release-alorel/compare/1.0.1...1.0.2) (2018-08-09)
 
 
