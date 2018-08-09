@@ -11,7 +11,7 @@ env:
 
 before_install:
 - npm i -g greenkeeper-lockfile
-- &prep if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
+- if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
 
 install: npm install
@@ -35,7 +35,7 @@ jobs:
   - on: branch=master
     stage: Release
     node_js: stable
-    before_install: *prep
+    before_install: if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
     before_script: npm run build
     script: semantic-release
     after_script: []
