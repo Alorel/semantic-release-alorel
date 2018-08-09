@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Alorel/semantic-release-alorel/compare/1.0.1...1.0.2) (2018-08-09)
+
+
+### Maintenance
+
+* **package:** Update conventional-changelog-alorel ([aec1acf](https://github.com/Alorel/semantic-release-alorel/commit/aec1acf))
+
 ## [1.0.1](https://github.com/Alorel/semantic-release-alorel/compare/1.0.0...1.0.1) (2018-08-09)
 
 
