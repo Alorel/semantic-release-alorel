@@ -20,7 +20,8 @@ after_success: cat ./coverage/lcov.info | coveralls
 
 stages:
 - Test
-- Release
+- name: Release
+  if: branch=master AND type = push
 
 before_cache: rm -rf ./node_modules/.cache
 cache:
@@ -29,8 +30,7 @@ cache:
 
 jobs:
   include:
-  - if: branch=master
-    stage: Release
+  - stage: Release
     node_js: stable
     before_install: if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
     before_script: npm run build
