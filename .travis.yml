@@ -32,7 +32,7 @@ stages:
 
 jobs:
   include:
-  - on: branch=master
+  - if: branch=master
     stage: Release
     node_js: stable
     before_install: if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
