@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Alorel/semantic-release-alorel/compare/1.0.0...1.0.1) (2018-08-09)
+
+
+### Bug Fixes
+
+* **dummy-fix:** trigger release ([465ed30](https://github.com/Alorel/semantic-release-alorel/commit/465ed30))
+
 # 1.0.0 (2018-08-09)
 
 
