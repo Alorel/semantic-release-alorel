@@ -1,10 +1,16 @@
 language: node_js
 sudo: false
+node_js:
+  - stable
+  - lts/carbon
+  - lts/boron
 
 before_install:
 - npm i -g greenkeeper-lockfile
 - if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
+
+install: npm install
 
 script:
   - npm run tslint
@@ -16,19 +22,13 @@ stages:
 - Test
 - Release
 
-oldNode: &oldNode
-  before_cache: rm -rf ./node_modules/.cache
-  cache:
-    directories:
-    - node_modules
+before_cache: rm -rf ./node_modules/.cache
+cache:
+  directories:
+  - node_modules
 
 jobs:
   include:
-  - node_js: stable
-  - <<: *oldNode
-    node_js: lts/carbon
-  - <<: *oldNode
-    node_js: lts/boron
   - if: branch=master
     stage: Release
     node_js: stable
