@@ -1,3 +1,15 @@
+## [1.2.2](https://github.com/Alorel/semantic-release-alorel/compare/1.2.1...1.2.2) (2018-08-10)
+
+
+### Bug Fixes
+
+* **prepare:** Remove debug log entry ([1951c96](https://github.com/Alorel/semantic-release-alorel/commit/1951c96))
+
+
+### Maintenance
+
+* **logging:** Add more logging ([23f1958](https://github.com/Alorel/semantic-release-alorel/commit/23f1958))
+
 ## [1.2.1](https://github.com/Alorel/semantic-release-alorel/compare/1.2.0...1.2.1) (2018-08-09)
 
 
