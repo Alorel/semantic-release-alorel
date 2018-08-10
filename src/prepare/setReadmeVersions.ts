@@ -8,6 +8,7 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
   const {log} = ctx.logger;
   const v = ctx.nextRelease.version;
 
+  log('Reading README.md');
   let readmeContents: string;
   try {
     readmeContents = await fs.readFile(readmePath, 'utf8');
@@ -32,11 +33,12 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
     ]
   ];
 
-  log('Applying versions to README');
-  for (const rpl of replacements) {
-    readmeContents = String.prototype.replace.apply(readmeContents, rpl);
+  for (let i = 0; i < replacements.length; i++) {
+    log(`Applying replacement ${i + 1} to README`);
+    readmeContents = String.prototype.replace.apply(readmeContents, replacements[i]);
   }
 
   log('Writing updated README.md');
   await fs.writeFile(readmePath, readmeContents);
+  log('Done');
 }
