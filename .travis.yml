@@ -21,7 +21,7 @@ after_success: cat ./coverage/lcov.info | coveralls
 stages:
 - Test
 - name: Release
-  if: branch=master AND type = push
+  if: branch=master AND type = push AND tag IS blank
 
 before_cache: rm -rf ./node_modules/.cache
 cache:
