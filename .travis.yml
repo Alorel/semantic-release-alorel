@@ -6,15 +6,15 @@ node_js:
   - lts/boron
 
 before_install:
-- npm i -g greenkeeper-lockfile
+- npm i -g greenkeeper-lockfile yarn
 - if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
 
-install: npm install
+install: yarn install
 
 script:
-  - npm run tslint
-  - npm test -- --forbid-only --forbid-pending
+  - yarn run tslint
+  - yarn test --forbid-only --forbid-pending
 after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
 after_success: cat ./coverage/lcov.info | coveralls
 
@@ -25,6 +25,7 @@ stages:
 
 before_cache: rm -rf ./node_modules/.cache
 cache:
+  yarn: true
   directories:
   - node_modules
 
