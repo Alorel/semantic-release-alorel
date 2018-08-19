@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/Alorel/semantic-release-alorel/compare/1.2.2...1.3.0) (2018-08-19)
+
+
+### Dependency updates
+
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/conventional-changelog-alorel to version 2.0.0 ([29d16ab](https://github.com/Alorel/semantic-release-alorel/commit/29d16ab))
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/conventional-changelog-alorel to version 2.0.1 ([20b983b](https://github.com/Alorel/semantic-release-alorel/commit/20b983b))
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/conventional-changelog-alorel to version 2.0.2 ([35930dd](https://github.com/Alorel/semantic-release-alorel/commit/35930dd))
+* **package:** update [@alorel-personal](https://github.com/alorel-personal)/tslint-rules to version 1.2.2 ([ef73fce](https://github.com/Alorel/semantic-release-alorel/commit/ef73fce))
+
+
+### Features
+
+* JSDelivr CDN link replacement ([7030bda](https://github.com/Alorel/semantic-release-alorel/commit/7030bda))
+
 ## [1.2.2](https://github.com/Alorel/semantic-release-alorel/compare/1.2.1...1.2.2) (2018-08-10)
 
 
