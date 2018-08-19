@@ -30,6 +30,10 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
     [
       /img\.shields\.io\/coveralls\/github\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\.([a-z]{2,4})/ig,
       `img.shields.io/coveralls/github/$1/$2/${v}.$4`
+    ],
+    [
+      /jsdelivr\.net\/npm\/([a-z\-0-9]+)@[a-z0-9\.]+/ig,
+      `jsdelivr.net/npm/$1@${v}`
     ]
   ];
 
