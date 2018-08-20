@@ -12,3 +12,4 @@
 /git_gpg_keys.asc
 /git_gpg_keys.asc.enc
 /yarn.lock
+/prepare-gpg-key.sh
