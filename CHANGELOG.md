@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Alorel/semantic-release-alorel/compare/1.3.0...1.3.1) (2018-08-20)
+
+
+### Bug Fixes
+
+* **package:** Add prepare-gpg-key.sh to npmignore ([55e6ed8](https://github.com/Alorel/semantic-release-alorel/commit/55e6ed8))
+
 # [1.3.0](https://github.com/Alorel/semantic-release-alorel/compare/1.2.2...1.3.0) (2018-08-19)
 
 
