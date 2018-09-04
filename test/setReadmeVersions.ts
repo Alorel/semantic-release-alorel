@@ -12,7 +12,7 @@ describe('setReadmeVersions', () => {
   let version: string;
   let newReadme: string;
 
-  before('init', async() => {
+  before('init', async () => {
     readmeFixturePath = join(__dirname, 'fixtures', 'README.md');
     cwd = __dirname;
     fixtureOutPath = join(cwd, 'README.md');
@@ -21,14 +21,14 @@ describe('setReadmeVersions', () => {
     await fs.writeFile(fixtureOutPath, readmeFixture);
   });
 
-  before('run', async() => {
+  before('run', async () => {
     await setReadmeVersions({}, {
       cwd,
       logger: {
-        error: function() {
+        error: function () {
           console.error.apply(console, arguments);
         },
-        log: function() {
+        log: function () {
           console.log.apply(console, arguments);
         }
       },
@@ -36,7 +36,7 @@ describe('setReadmeVersions', () => {
     });
   });
 
-  before('read', async() => {
+  before('read', async () => {
     newReadme = await fs.readFile(fixtureOutPath, 'utf8');
   });
 
@@ -58,7 +58,7 @@ describe('setReadmeVersions', () => {
     });
   });
 
-  after('cleanup', async() => {
+  after('cleanup', async () => {
     try {
       await fs.unlink(fixtureOutPath);
     } catch {
