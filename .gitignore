@@ -1,8 +1,10 @@
-/.idea/
-/node_modules/
-/dist/
 /test/README.md
-/coverage/
-/.nyc_output/
-/*.tgz
 /git_gpg_keys.asc
+.idea/
+node_modules/
+dist/
+coverage/
+.nyc_output/
+yarn-error.log
+*.tgz
+package-lock.json
