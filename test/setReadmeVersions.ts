@@ -4,6 +4,8 @@ import {join} from 'path';
 import * as uuid from 'uuid';
 import {setReadmeVersions} from '../src/prepare/setReadmeVersions';
 
+//tslint:disable:max-line-length
+
 describe('setReadmeVersions', () => {
   let readmeFixturePath: string;
   let readmeFixture: string;
@@ -54,6 +56,46 @@ describe('setReadmeVersions', () => {
       it('svg', () => {
         const str = `https://coveralls.io/github/Alorel/semantic-release-alorel?branch=${version}`;
         expect(newReadme).to.contain(str);
+      });
+    });
+  });
+
+  describe('/@([0-9]+\\.[0-9]+\\.[0-9]+)\\)/ig', () => {
+    describe('bundlephobia', () => {
+      describe('unscoped', () => {
+        it('link', () => {
+          expect(newReadme).to.contain(`https://bundlephobia.com/result?p=ngforage@${version}`);
+        });
+        it('image', () => {
+          expect(newReadme).to.contain(`https://badgen.net/bundlephobia/minzip/ngforage@${version}`);
+        });
+      });
+      describe('scoped', () => {
+        it('link', () => {
+          expect(newReadme).to.contain(`https://bundlephobia.com/result?p=@alorel-personal/semantic-release@${version}`);
+        });
+        it('image', () => {
+          expect(newReadme).to.contain(`https://badgen.net/bundlephobia/minzip/@alorel-personal/semantic-release@${version}`);
+        });
+      });
+    });
+
+    describe('packagephobia', () => {
+      describe('unscoped', () => {
+        it('link', () => {
+          expect(newReadme).to.contain(`https://packagephobia.now.sh/result?p=ngforage@${version}`);
+        });
+        it('image', () => {
+          expect(newReadme).to.contain(`https://packagephobia.now.sh/badge?p=ngforage@${version}`);
+        });
+      });
+      describe('scoped', () => {
+        it('link', () => {
+          expect(newReadme).to.contain(`https://packagephobia.now.sh/result?p=@alorel-personal/semantic-release@${version}`);
+        });
+        it('image', () => {
+          expect(newReadme).to.contain(`https://packagephobia.now.sh/badge?p=@alorel-personal/semantic-release@${version}`);
+        });
       });
     });
   });

@@ -24,6 +24,10 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
       `?branch=${v}`
     ],
     [
+      /@([0-9]+\.[0-9]+\.[0-9]+)\)/ig,
+      `@${v})`
+    ],
+    [
       /img\.shields\.io\/travis(\/com)?\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\/([a-z0-9-_.]+)\.([a-z]{2,4})/ig,
       `img.shields.io/travis$1/$2/$3/${v}.$5`
     ],
