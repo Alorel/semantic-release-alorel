@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/Alorel/semantic-release-alorel/compare/1.3.1...1.4.0) (2018-11-06)
+
+
+### Features
+
+* packagephobia & bundlephobia badge support ([a3b85ac](https://github.com/Alorel/semantic-release-alorel/commit/a3b85ac))
+
+
+### Maintenance
+
+* Run tslint --fix for updated rules ([7eb9fba](https://github.com/Alorel/semantic-release-alorel/commit/7eb9fba))
+
 ## [1.3.1](https://github.com/Alorel/semantic-release-alorel/compare/1.3.0...1.3.1) (2018-08-20)
 
 
