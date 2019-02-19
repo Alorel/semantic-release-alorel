@@ -43,7 +43,7 @@ export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void>
 
   for (let i = 0; i < replacements.length; i++) {
     log(`Applying replacement ${i + 1} to README`);
-    readmeContents = String.prototype.replace.apply(readmeContents, replacements[i]);
+    readmeContents = String.prototype.replace.apply(readmeContents, <any>replacements[i]);
   }
 
   log('Writing updated README.md');
