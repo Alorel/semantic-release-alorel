@@ -28,10 +28,10 @@ describe('setReadmeVersions', () => {
       cwd,
       logger: {
         error: function () {
-          console.error.apply(console, arguments);
+          console.error.apply(console, <any>arguments);
         },
         log: function () {
-          console.log.apply(console, arguments);
+          console.log.apply(console, <any>arguments);
         }
       },
       nextRelease: {version}

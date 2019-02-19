@@ -6,12 +6,12 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "npm --scripts-prepend-node-path=auto run build -- --watch",
     "pretest": "rimraf coverage",
     "test": "nyc mocha --opts ./mocha.opts",
-    "test:watch": "npm run test -- --watch",
+    "test:watch": "npm --scripts-prepend-node-path=auto run test -- --watch",
     "tslint": "tslint -s ./node_modules/custom-tslint-formatters/formatters -t grouped -p tsconfig.test.json",
-    "tslint:fix": "npm run tslint -- --fix",
+    "tslint:fix": "npm --scripts-prepend-node-path=auto run tslint -- --fix",
     "reinstall": "rm -rf node_modules package-lock.json && npm install"
   },
   "repository": {
@@ -46,9 +46,9 @@
     "rimraf": "^2.6.2",
     "semantic-release": "^15.9.6",
     "source-map-support": "^0.5.6",
-    "ts-node": "^7.0.0",
+    "ts-node": "^8.0.2",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.3.3",
     "uuid": "^3.3.2"
   },
   "dependencies": {
