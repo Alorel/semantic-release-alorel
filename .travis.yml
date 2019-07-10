@@ -6,9 +6,8 @@ node_js:
   - lts/carbon
 
 before_install:
-- npm i -g greenkeeper-lockfile yarn
-- if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
-- greenkeeper-lockfile-update
+  - npm i -g greenkeeper-lockfile yarn
+  - greenkeeper-lockfile-update
 
 install: yarn install --check-files --ignore-engines
 
@@ -19,22 +18,22 @@ after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
 after_success: cat ./coverage/lcov.info | coveralls
 
 stages:
-- Test
-- name: Release
-  if: branch=master AND type = push AND tag IS blank
+  - Test
+  - name: Release
+    if: branch=master AND type = push AND tag IS blank
 
 before_cache: rm -rf ./node_modules/.cache
 cache:
   yarn: true
   directories:
-  - node_modules
+    - node_modules
 
 jobs:
   include:
-  - stage: Release
-    node_js: stable
-    before_install: if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
-    before_script: npm run build
-    script: semantic-release
-    after_script: []
-    after_success: []
+    - stage: Release
+      node_js: stable
+      before_install: npm i -g yarn
+      before_script: yarn run build
+      script: semantic-release
+      after_script: []
+      after_success: []
