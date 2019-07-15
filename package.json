@@ -28,7 +28,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@alorel-personal/conventional-changelog-alorel": "2.1.0",
+    "@alorel-personal/conventional-changelog-alorel": "2.1.1",
     "@alorel-personal/tslint-rules": "4.1.1",
     "@semantic-release/changelog": "^3.0.0",
     "@semantic-release/git": "^7.0.1",
