@@ -3,6 +3,11 @@ import {join} from 'path';
 import {Conf} from '../Conf';
 import {Context} from '../Context';
 
+/**
+ * Set badge versions on README.md
+ * @param _cfg Configuration
+ * @param ctx Runtime context
+ */
 export async function setReadmeVersions(_cfg: Conf, ctx: Context): Promise<void> {
   const readmePath = join(ctx.cwd, 'README.md');
   const {log} = ctx.logger;
